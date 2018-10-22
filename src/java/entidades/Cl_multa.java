@@ -11,6 +11,8 @@ package entidades;
  */
 public class Cl_multa {
     
+    //assaas
+    
     private int id;
     private String rut;  
     private String desc, es_invalidante;

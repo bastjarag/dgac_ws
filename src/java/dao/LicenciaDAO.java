@@ -130,5 +130,23 @@ public class LicenciaDAO {
             return false;
         }
     }
+      
+       public boolean existeLicenciabYrut(String v_rut) {
+        try {
+            String sql = "SELECT * FROM LICENCIAS WHERE rut = ?;";
+            PreparedStatement pstm = conexion.prepareCall(sql);
+            pstm.setString(1, v_rut);
+            ResultSet rs = pstm.executeQuery();
+            Cl_licencia lic = new Cl_licencia();
+            while (rs.next()) {              
+                //lic.setNro_licencia(rs.getInt("nro_licencia"));                
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            System.out.println("error: " + e.getMessage());
+            return false;
+        }
+    }
 
 }

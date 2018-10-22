@@ -188,4 +188,19 @@ public class webservice_dgac {
         }
         return var;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "operation")
+    public Boolean existeLicenciabYrut(@WebParam(name = "rut") String rut) {
+        LicenciaDAO lDAO = new LicenciaDAO();
+         boolean var=false;
+       try {
+            var = lDAO.existeLicenciabYrut(rut);
+        } catch (Exception ex) {            
+            System.out.println("error: " + ex);
+        }
+        return var;
+    }
 }

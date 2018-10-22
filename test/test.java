@@ -1,10 +1,12 @@
 
 import conexion.Cl_conexion;
 import dao.AeronaveDAO;
+import dao.LicenciaDAO;
 import dao.MultaDAO;
 import entidades.Cl_aeronave;
 import entidades.Cl_licencia;
 import entidades.Cl_multa;
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -35,16 +37,16 @@ public class test {
         Date dateobj = new Date();
         Date dateobj2 = new SimpleDateFormat("dd/MM/yyyy").parse("20/08/1996");
 
-        Cl_aeronave a1 = new Cl_aeronave("CC-WBS", dateobj);
-        Cl_aeronave a2 = new Cl_aeronave("DD-ABC", dateobj2);
+        //Cl_aeronave a1 = new Cl_aeronave("CC-WBS", dateobj);
+        //Cl_aeronave a2 = new Cl_aeronave("DD-ABC", dateobj2);
 
         Cl_multa mu1 = new Cl_multa(1, "19516416-9", "Multa por guapo", "No");
         Cl_multa mu2 = new Cl_multa(2, "16544449-3", "Multa por velocidad", "Si");
 
         //pruebas tostring   
-        System.out.println("******Aeronaves*******");
-        System.out.println("a1:" + a1.toString());
-        System.out.println("a2:" + a2.toString());
+        //System.out.println("******Aeronaves*******");
+        //System.out.println("a1:" + a1.toString());
+        //System.out.println("a2:" + a2.toString());
 
         System.out.println("****Licencias*******");
         System.out.println("li1: " + li1.toString());
@@ -54,12 +56,8 @@ public class test {
         System.out.println("mu1: " + mu1);
         System.out.println("mu2: " + mu2);
 
-        System.out.println("*********D************");   
-        MultaDAO mDAO = new MultaDAO();
-        System.out.println("DAO multas/getmultabyrut");
-        Cl_multa m1 = mDAO.getMultaByRut("19516416-9");
-        System.out.println(m1);
-
+      
+        MultaDAO mDAO = new MultaDAO();       
         System.out.println("*****Listar todas las multas de un rut:****");
         try {
             List<Cl_multa> listaMultas = mDAO.Listar("16544449-3");
@@ -67,20 +65,64 @@ public class test {
                 System.out.println(m.getId());
                 System.out.println(m.getRut());
                 System.out.println(m.getDesc());
-                System.out.println(m.getEs_invalidante());
-                System.out.println("************");
+                System.out.println(m.getEs_invalidante()); 
+                
             }
         } catch (Exception ex) {
-            System.out.println("error listar main: " + ex);
+            System.out.println("error listar: " + ex);
         }
-        System.out.println("****fin listar todas multas****");
-
-       
+        System.out.println("****fin listar todas multas****");       
         
-        System.out.println("****getAeronaveByPatente*****");
-        AeronaveDAO aDAO = new AeronaveDAO();
-        Cl_aeronave aero1 = aDAO.getAeronaveByPatente("CC-WBS");
-        System.out.println(""+aero1);
+      
+        
+          System.out.println("*****Listar licencias de un rut:****");
+          LicenciaDAO lDAO = new LicenciaDAO();
+        try {
+            List<Cl_licencia> lista = lDAO.Listar("19516416-9");
+            for (Cl_licencia m : lista) {
+                System.out.println(""+m);             
+            }
+        } catch (Exception ex) {
+            System.out.println("error listar: " + ex);
+        }
+        System.out.println("****fin listar todas licencias****"); 
+        
+          
+          System.out.println("*****Listar aeronaves por fecha aeronavegabliidad:****");
+          AeronaveDAO aeDAO = new AeronaveDAO();
+        try {
+            List<Cl_aeronave> listaAero = aeDAO.Listar("2018-09-25");
+            for (Cl_aeronave m : listaAero) {
+                System.out.println(""+m);             
+            }
+        } catch (Exception ex) {
+            System.out.println("error listar: " + ex);
+        }
+        System.out.println("****fin listar aeronaves****"); 
+        
+        System.out.println("**********Prueba");
+       /*
+        try {
+            String y = "CC-IIII";
+            //Timestamp x = aeDAO.fechaAeronavegabilidad_aeronave(y);
+            //System.out.println("La fecha de aeronavegabilidad de la aeronave condsw patente "+y+" es: "+x);
+        } catch (Exception ex) {
+            System.out.println("error listar: " + ex);
+        }
+        */
+        System.out.println("**********Prueba fecha aero x patente");
+       
+        try {
+            String xy = "CC-WBS";
+            String x = aeDAO.fechaAeronavegabilidad_aeronave(xy);
+            System.out.println("La fecha de aeronavegabilidad de la aeronave con patente "+xy+" es: "+x);
+        } catch (Exception ex) {
+            System.out.println("error listar: " + ex);
+        }
+        
+        
+        
+        
         
         
         

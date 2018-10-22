@@ -5,6 +5,7 @@
  */
 package entidades;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 /**
@@ -15,14 +16,27 @@ public class Cl_aeronave {
 
     private String patente;
     private Date fecha_aeronavegabilidad;
+    private Timestamp fecha_aeronavegabilidad_1;
 
     public Cl_aeronave() {
     }
 
-    public Cl_aeronave(String patente, Date fecha_aeronavegabilidad) {
+    public Cl_aeronave(String patente, Date fecha_aeronavegabilidad, Timestamp fecha_aeronavegabilidad_1) {
         this.patente = patente;
         this.fecha_aeronavegabilidad = fecha_aeronavegabilidad;
+        this.fecha_aeronavegabilidad_1 = fecha_aeronavegabilidad_1;
     }
+    
+    
+    public Timestamp getFecha_aeronavegabilidad_1() {
+        return fecha_aeronavegabilidad_1;
+    }
+
+    public void setFecha_aeronavegabilidad_1(Timestamp fecha_aeronavegabilidad_1) {
+        this.fecha_aeronavegabilidad_1 = fecha_aeronavegabilidad_1;
+    }
+
+   
 
     public String getPatente() {
         return patente;

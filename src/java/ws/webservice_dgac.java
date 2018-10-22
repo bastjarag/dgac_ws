@@ -193,12 +193,13 @@ public class webservice_dgac {
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "operation")
-    public Boolean existeLicenciabYrut(@WebParam(name = "rut") String rut) {
+    @WebMethod(operationName = "validarLicenciaByrut")
+    public boolean validarLicenciaByrut(@WebParam(name = "rut") String rut) {
         LicenciaDAO lDAO = new LicenciaDAO();
          boolean var=false;
        try {
             var = lDAO.existeLicenciabYrut(rut);
+            return var;
         } catch (Exception ex) {            
             System.out.println("error: " + ex);
         }
@@ -208,6 +209,7 @@ public class webservice_dgac {
     /**
      * Web service operation
      */
+
     @WebMethod(operationName = "FechaVctoByRutMedicina")
     public String FechaVctoByRutMedicina(@WebParam(name = "rut") String rut) {
         MedicinaDAO aDAO = new MedicinaDAO();

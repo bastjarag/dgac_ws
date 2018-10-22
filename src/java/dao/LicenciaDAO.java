@@ -139,7 +139,7 @@ public class LicenciaDAO {
             ResultSet rs = pstm.executeQuery();
             Cl_licencia lic = new Cl_licencia();
             while (rs.next()) {              
-                //lic.setNro_licencia(rs.getInt("nro_licencia"));                
+                //lic.setRut(rs.getString("rut"));                
                 return true;
             }
             return false;

@@ -4,7 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Basti/AppData/Local/GitHubDesktop/dgac_ws/src/java/dao/AeronaveDAO.java</file>
+            <file>file:/C:/Users/Basti/AppData/Local/GitHubDesktop/dgac_ws/src/java/entidades/Cl_multa.java</file>
+            <file>file:/C:/Users/Basti/AppData/Local/GitHubDesktop/dgac_ws/src/java/dao/LicenciaDAO.java</file>
+            <file>file:/C:/Users/Basti/AppData/Local/GitHubDesktop/dgac_ws/test/pruebaCone.java</file>
             <file>file:/C:/Users/Basti/AppData/Local/GitHubDesktop/dgac_ws/src/java/ws/webservice_dgac.java</file>
+            <file>file:/C:/Users/Basti/AppData/Local/GitHubDesktop/dgac_ws/src/java/entidades/Cl_licencia.java</file>
             <file>file:/C:/Users/Basti/AppData/Local/GitHubDesktop/dgac_ws/test/test.java</file>
         </group>
     </open-files>

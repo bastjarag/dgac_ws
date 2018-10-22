@@ -3,6 +3,7 @@ package ws;
 
 import dao.AeronaveDAO;
 import dao.LicenciaDAO;
+import dao.MedicinaDAO;
 import dao.MultaDAO;
 import entidades.Cl_aeronave;
 import entidades.Cl_licencia;
@@ -198,6 +199,21 @@ public class webservice_dgac {
          boolean var=false;
        try {
             var = lDAO.existeLicenciabYrut(rut);
+        } catch (Exception ex) {            
+            System.out.println("error: " + ex);
+        }
+        return var;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "FechaVctoByRutMedicina")
+    public String FechaVctoByRutMedicina(@WebParam(name = "rut") String rut) {
+        MedicinaDAO aDAO = new MedicinaDAO();
+         String var="";
+       try {
+            var = aDAO.fechaVctoByRut(rut);
         } catch (Exception ex) {            
             System.out.println("error: " + ex);
         }

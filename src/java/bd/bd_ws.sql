@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-10-2018 a las 14:40:22
+-- Tiempo de generación: 20-11-2018 a las 17:50:58
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -96,9 +96,8 @@ CREATE TABLE `medicinas` (
 --
 
 INSERT INTO `medicinas` (`id`, `descripcion`, `fecha_vcto`, `rut`) VALUES
-(1, 'Paracetamol', '2018-10-22 22:36:36', '19516416-9');
-INSERT INTO `medicinas` (`id`, `descripcion`, `fecha_vcto`, `rut`) VALUES
-(2, 'Ibuprofeno', '2018-10-23 22:36:36', '16544449-3');
+(1, 'Paracetamol', '2018-10-22 22:36:36', '19516416-9'),
+(2, 'Ibuprofeno', '2018-10-24 01:36:36', '16544449-3');
 
 -- --------------------------------------------------------
 
@@ -169,7 +168,7 @@ ALTER TABLE `licencias`
 -- AUTO_INCREMENT de la tabla `medicinas`
 --
 ALTER TABLE `medicinas`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `multas`
 --
